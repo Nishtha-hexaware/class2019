@@ -1,0 +1,6 @@
+2001 MA HEXAVARSIT 8 
+2002 UM HEXAVARSIT 7 
+2003 VR HEXAVARSIT 6 
+2004 JK HEXAVARSIT 6
+
+empid initials department leave_available         
