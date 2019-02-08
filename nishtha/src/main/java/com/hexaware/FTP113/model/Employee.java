@@ -5,10 +5,11 @@ import com.hexaware.FTP113.persistence.EmployeeDAO;
 
 import java.util.Objects;
 import java.util.List;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 /**
  * Employee class to store employee personal details.
- * @author hexware
+ * @author hexware.
  */
 public class Employee {
 
@@ -39,7 +40,14 @@ public class Employee {
       return false;
     }
     Employee emp = (Employee) obj;
-    if (Objects.equals(empId, emp.empId)) {
+    if (Objects.equals(empId, emp.empId)
+        && Objects.equals(empFullName, emp.empFullName)
+        && Objects.equals(empEmail, emp.empEmail)
+        && Objects.equals(empMobileNo, emp.empMobileNo)
+        && Objects.equals(empDateOfJoining, emp.empDateOfJoining)
+        && Objects.equals(empDepartment, emp.empDepartment)
+        && Objects.equals(empMgrId, emp.empMgrId)
+        && Objects.equals(empAvailLeavBal, emp.empAvailLeavBal)) {
       return true;
     }
     return false;
@@ -47,14 +55,23 @@ public class Employee {
 
   @Override
   public final int hashCode() {
-    return Objects.hash(empId);
+    return Objects.hash(empId, empFullName, empEmail, empMobileNo, empDateOfJoining,
+                        empDepartment, empMgrId, empAvailLeavBal);
   }
   @Override
   public final String toString() {
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    String dj = sdf.format(empDateOfJoining);
     return " EmpId is: " + empId + " EmpFullName: " + empFullName + " EmpEmail: "
              + empEmail + " EmpMobileNo is: " + empMobileNo + " EmpDateOfJoining: "
-             + empDateOfJoining + " EmpDepartment is: " + empDepartment + "EmpMgrId: "
-             + empMgrId + "EmpAvailLeaveBal: " + empAvailLeavBal;
+             + dj + " EmpDepartment is: " + empDepartment + " EmpMgrId: "
+             + empMgrId + " EmpAvailLeaveBal: " + empAvailLeavBal;
+  }
+  /**
+   * Default Constructor.
+   */
+  public Employee() {
+
   }
 
   /**
@@ -66,7 +83,6 @@ public class Employee {
    * @param argEmpDepartment to initialize employee dept.
    * @param argEmpMgrId to initialize employee manager Id.
    * @param argEmpAvailLeavBal to initialize employee AvailLeaveBal.
-
    */
   public Employee(final int argEmpId, final String argEmpFullName, final String argEmpEmail,
                   final String argEmpMobileNo, final Date argEmpDateOfJoining,
@@ -153,11 +169,11 @@ public class Employee {
   }
   /**
    *
-   * @param argEmpDateOfJoining to set employee DOJ.
+   * @param doj to set employee DOJ.
    */
 
-  public final void setEmpDateOfJoining(final Date argEmpDateOfJoining) {
-    this.empDateOfJoining = argEmpDateOfJoining;
+  public final void setEmpDateOfJoining(final Date doj) {
+    this.empDateOfJoining = doj;
   }
   /**
    * Gets the EmployeeDepartment.
@@ -207,12 +223,12 @@ public class Employee {
   }
   /**
    * The dao for employee.
+   * @return connection.
    */
-  private static EmployeeDAO dao() {
+  public static EmployeeDAO dao() {
     DbConnection db = new DbConnection();
     return db.getConnect().onDemand(EmployeeDAO.class);
   }
-
   /**
    * list all employee details.
    * @return all employees' details
