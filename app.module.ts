@@ -13,10 +13,16 @@ import { EmployeeComponent } from './employee/employee.component';
 import { EmployComponent } from './employ/employ.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManagerComponent } from './manager/manager.component';
+import { LeaveDetailsComponent } from './leave-details/leave-details.component';
+import { LeaveHistoryComponent } from './leave-history/leave-history.component';
+import { ApproveDenyComponent } from './approve-deny/approve-deny.component';
+import { ApplyLeaveComponent } from './apply-leave/apply-leave.component';
 const data:Routes= [
   {path:'',component:EmployeeComponent},
 {path:'Login',component:LoginComponent},
-{path:'Dashboard',component:DashboardComponent}
+{path:'Dashboard',component:DashboardComponent},
+{path:'ApproveDeny',component:ApproveDenyComponent},
+{path:'applyLeave',component:ApplyLeaveComponent}
 ];
 @NgModule({
   declarations: [
@@ -29,7 +35,11 @@ const data:Routes= [
 
     EmployComponent,
     DashboardComponent,
-    ManagerComponent
+    ManagerComponent,
+    LeaveDetailsComponent,
+    LeaveHistoryComponent,
+    ApproveDenyComponent,
+    ApplyLeaveComponent
   ],
   imports: [
     BrowserModule,HttpModule,FormsModule,RouterModule.forRoot(data)

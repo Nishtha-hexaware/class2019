@@ -12,7 +12,7 @@ employ:Observable<Employee>;
 empno:number;
 mg:number;
   constructor(private employeeService:EmployeeService) { 
-this.empno=parseInt(localStorage.getItem("mgr"));
+this.empno=parseInt(localStorage.getItem("empMgrId"));
 this.employ=employeeService.searchEmployee(this.empno);
   }
 

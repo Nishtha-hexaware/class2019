@@ -12,13 +12,13 @@ export class EmployeeService {
   }
   searchEmployee(empId:number): Observable<Employee>{
     return this.http.get
- ("http://localhost:8080/FTP113-0.0.1-SNAPSHOT/api/employees/"+empId)
+ ("http://localhost:8080/FTP113/api/employees/"+empId)
  .map((res:Response) => res.json())
     }
     getEmployee() : Observable<Employee[]>
     {
 return this.http.get
-("http://localhost:8080/FTP113-0.0.1-SNAPSHOT/api/employees")
+("http://localhost:8080/FTP113/api/employees")
 .map ((res:Response) => res.json())
     }
 }
