@@ -1,0 +1,61 @@
+<p>
+  leave-details works!
+</p>
+
+<table border="3">
+   <tr *ngFor="let e of empData | async"> 
+      <div *ngIf="e.empMgrId==empno"> 
+          <th>Employee Id</th> <td>{{e.empId}}</td>
+          <th>Employee Name</th> <td>{{e.empFullName}}</td>
+          <th>Leave Balance</th> <td>{{e.empAvailLeavBal}}</td>
+          <!-- <br/><br/> -->
+          <tr border="3">
+              <th width="70">Leave ID</th>
+              <th>Employee ID</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Number Of Leaves</th>
+              <th>Leave Reason</th>
+              <th>Applied On</th>
+              <th>Manager Comments</th>
+              </tr>              
+        </div>
+        <table border="3">
+            <tr *ngFor="let ld of leavedetails | async" (click)="setClickRowDup(ld.leaId, e.empId)">
+            <div *ngIf="e.empId == ld.leaEmpId" rowspan=200 px>
+            <td width="70">{{ld.leaId}}</td>
+            <td width="90">{{ld.leaEmpId}}</td>
+            <td width="110">{{ld.leaStartDate}}</td>
+            <td width="150">{{ld.leaEndDate}}</td>
+            <td width="135">{{ld.leaNumberOfDays}}</td>
+            <td width="100">{{ld.leaReason}}</td>
+            <td width="80">{{ld.leaAppliedOn}}</td>
+            <td width="140">{{ld.leaManagerComment}}</td>
+            </div>
+            </tr>
+            </table>
+            
+   </tr>
+</table>
+
+<div align="center" *ngIf="showButton">
+    <input type="button" (click)="doApproveDeny()" value="Approve/Deny">
+    </div>
+
+    
+       
+       <div align="center" *ngIf="!showButton">
+       <input type="button" value="Approve/Deny" disabled="disabled">
+       </div>
+    <!-- <td>{{e.empId}}</td>
+    <td>{{e.empFullName}}</td>
+    <td>{{e.empEmail}}</td>
+    <td>{{e.empMobileNo}}</td>
+    <td>{{e.empDateOfJoining}}</td>
+    <td>{{e.empDepartment}}</td>
+    <td>{{e.empMgrId}}</td>
+    <td>{{e.empAvailLeavBal}}</td>
+    <td><input type ="button" value="login"(click)="login(e.empId,e.empMgrId)"/>
+    </td>
+  </tr>
+  </table> -->
