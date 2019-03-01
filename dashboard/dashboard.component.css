@@ -1,0 +1,13 @@
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("https://hexaware.com/wp-content/themes/hexaware-main/images/brandman.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#showdetails {
+  border: 2px solid rgb(37, 33, 71);
+  padding: 10px;
+  border-radius: 50px 20px;
+}

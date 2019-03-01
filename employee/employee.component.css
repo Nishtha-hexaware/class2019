@@ -1,0 +1,18 @@
+#head{
+    background-color: lavender;
+    text-align: center;
+}
+tr:hover {background-color : rosybrown;}
+
+#image {
+  background-image: url("https://hexaware.com/wp-content/themes/hexaware-main/images/brandman.jpg");
+  background-position: bottom;
+  padding : 40px;
+}
+ table{
+  color : black;
+  background-image: url("http://www.thecharityindia.com/images/login-background.jpg");
+   background-size: cover;
+  background-position: center;
+  padding : 20px;
+} 

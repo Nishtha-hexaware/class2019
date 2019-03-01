@@ -1,0 +1,21 @@
+
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("https://hexaware.com/wp-content/uploads/2016/05/Grow-Digital.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 120px;
+  font-weight: bold;
+  color: #f7f6f6;
+}
+
+.style{
+    text-align: center;
+    font-size:30px;
+    text-decoration:underline;
+}

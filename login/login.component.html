@@ -1,0 +1,47 @@
+<html>
+
+<body>
+ <h1 style= "color:silver;text-align:center;"><b>EMPLOYEE LOGIN :</b> </h1>
+<div style="text-align:center" >
+
+ 
+<div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+ 
+    <div class="modal-content">
+     <div class="modal-header" *ngIf="username==1000">
+      <img src="SANJU.jpg" alt="avatar" class="rounded-circle img-responsive">
+      </div>
+      <div class="modal-header" *ngIf="username==2000">
+      <img src="BHASKAR.jpg" alt="avatar" class="rounded-circle img-responsive">
+      </div>
+      <div class="modal-header" *ngIf="username==3000">
+      <img src="PAVAN.jpg" alt="avatar" class="rounded-circle img-responsive">
+      </div>
+      <div class="modal-header" *ngIf="username==4000">
+      <img src="NISHTHA.jpg" alt="avatar" class="rounded-circle img-responsive">
+      </div>
+      <div class="modal-header" *ngIf="username==5000">
+      <img src="KARTHIGA.jpg" alt="avatar" class="rounded-circle img-responsive">
+      </div> 
+    </div>
+    </div> 
+  </div> 
+</div>
+ 
+<form name="FormLogin" (ngSubmit)="login()" align="center">
+
+
+          Employ Id:
+  <input type = "text" name="username" [(ngModel)]="username" readonly/> <br/> <br/>
+
+          Password:
+  <input type = "password" name="password" [(ngModel)]="password"/> <br/> <br/>
+
+    <input type="submit"  value="LOGIN">
+
+</form>
+</body>
+</html>
+

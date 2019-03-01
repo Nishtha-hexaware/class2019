@@ -1,0 +1,36 @@
+<h3 class=head>MANAGER DETAILS</h3>
+<div *ngIf="empno == 0;then thenBlock; else elseBlock">
+  </div>
+
+  <ng-template #thenBlock>
+    <div> <b>No Manager </b> </div>
+  </ng-template>
+    <ng-template #elseBlock>
+      <div *ngIf="employ.empMgrId != 0">
+
+          Empno:
+          {{ (employ | async)?.empId}}
+          <br/>
+          FullName:
+          {{ (employ | async)?.empFullName}}
+          <br/>
+          Email:
+          {{ (employ | async)?.empEmail}}
+          <br/>
+          MobileNo:
+          {{ (employ | async)?.empMobileNo}}
+          <br/>
+          Date Of Joining:
+          {{ (employ | async)?.empDateOfJoining}}
+          <br/>
+          Department:
+          {{ (employ | async) ?.empDepartment}}
+          <br/>
+          ManagerId:
+          {{ (employ | async)?.empMgrId}}
+          <br/>
+          Available Leave Balance:
+          {{ (employ | async)?.empAvailLeavBal}}
+          <br/>
+      </div>
+</ng-template>
