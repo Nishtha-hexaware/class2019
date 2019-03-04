@@ -1,0 +1,11 @@
+#head{
+    background-color: #a0c9ff;
+    text-align: center;
+}
+tr:hover {background-color: #a0c9ff;}
+
+#image {
+  background-image: url("https://hexaware.com/wp-content/themes/hexaware-main/images/brandman.jpg");
+  background-position: bottom;
+  padding : 40px;
+}
