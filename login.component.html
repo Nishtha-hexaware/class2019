@@ -1,8 +1,13 @@
 <html>
 
 <body>
- <h1 style= "color:silver;text-align:center;"><b>EMPLOYEE LOGIN :</b> </h1>
-<div style="text-align:center" >
+
+<div class="center">
+
+ <fieldset>
+   <legend class=style>SIGN-IN</legend>
+   <br/>
+ <div style="text-align:center" > 
 
  
 <div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -29,19 +34,24 @@
     </div> 
   </div> 
 </div>
- 
+ <br/>
+
+
 <form name="FormLogin" (ngSubmit)="login()" align="center">
 
 
-          Employ Id:
+          <b>EMPLOYEE ID:</b><br/>
   <input type = "text" name="username" [(ngModel)]="username" readonly/> <br/> <br/>
 
-          Password:
+          <b>PASSWORD:</b><br/>
   <input type = "password" name="password" [(ngModel)]="password"/> <br/> <br/>
 
-    <input type="submit"  value="LOGIN">
+    <input type="submit" class ="button" value="LOGIN">
 
 </form>
+ </fieldset>
+</div>
+
 </body>
 </html>
 
