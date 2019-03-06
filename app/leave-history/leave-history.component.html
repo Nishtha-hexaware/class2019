@@ -1,0 +1,60 @@
+
+<body>
+  <br/><h1 id=head> LEAVE HISTORY </h1>
+<table border="7" width=100%>
+    <tr>
+      <th>Leave Id</th><th>EmpId</th><th>NumberOfDays</th><th>StartDate</th>
+      <th>EndDate</th><th>LeaveType</th><th>Status</th><th>Reason</th><th>AppliedOn</th>
+      <th>ManagerComment</th>
+    </tr>
+    <tr *ngFor="let e of leavehistory | async | paginate: { id : 'listing_pagination',
+  itemsPerPage:5,
+  currentPage: page,
+  totalItems: totalRec
+  }">
+      <td>{{e.leaId}}</td>
+      <td>{{e.leaEmpId}}</td>
+      <td>{{e.leaNumberOfDays}}</td>
+      <td>{{e.leaStartDate}}</td>
+      <td>{{e.leaEndDate}}</td>
+      <td>{{e.leaLeaveType}}</td>
+      <td>{{e.leaStatus}}</td>
+      <td>{{e.leaReason}}</td>
+      <td>{{e.leaAppliedOn}}</td>
+      <td>{{e.leaManagerComment}}</td>
+    </tr>
+    </table> 
+  <br/>
+  <div align = center>
+      <input type="button" class = "button" value="APPLY LEAVE" (click)="applyLeave()" />
+  </div>
+  
+      <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+ 
+  <br/>
+  <br/>
+  <br/>
+    <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  
+<div>
+  <pagination-controls  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+</div>
+
+</body>

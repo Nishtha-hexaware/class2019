@@ -1,0 +1,45 @@
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <body>
+     <div class="w3-container w3-animate-top">
+<h1 id=head> <img src="https://hexaware.com/wp-content/themes/hexaware-main/images/Brand/downloadbrand/color/logo.jpg"  width="42" height="42" align="middle">EMPLOYEE DETAILS<img src="https://hexaware.com/wp-content/themes/hexaware-main/images/Brand/downloadbrand/color/logo.jpg"  width="42" height="42" align="middle"></h1>
+<br/>
+</div>
+ <div class="w3-container w3-animate-bottom">
+<form>
+    <div class="form-group" align="right">
+        <div class="input-group">
+            <div class="input-group-addon" align="right"><i class="glyphicon glyphicon-search"></i></div>
+            <input type="text" class="form-control" id=icon name="searchString"  placeholder="Type to search..." [(ngModel)]="searchString">
+        </div>
+          <br/>
+    </div>
+</form>
+
+
+
+<table border="3">
+  <tr>
+    <th>Emp Id</th><th>Name</th><th>Email</th><th>Contact</th>
+    <th>Joining Date</th><th>Department</th><th>Manager Id</th><th>Leave Balance</th><th>Login</th>
+  </tr>
+  <tr *ngFor="let e of employee | async | filterdata : {empFullName : searchString, empId : searchString, empEmail : searchString,
+    empMobileNo : searchString, empDateOfJoining : searchString, empDepartment : searchString, empMgrId : searchString, empAvailLeavBal : searchString}">
+
+    <td>{{e.empId}}</td>
+    <td>{{e.empFullName}}</td>
+    <td>{{e.empEmail}}</td>
+    <td>{{e.empMobileNo}}</td>
+    <td>{{e.empDateOfJoining}}</td>
+    <td>{{e.empDepartment}}</td>
+    <td>{{e.empMgrId}}</td>
+    <td>{{e.empAvailLeavBal}}</td>
+    <td><input type ="button" id=button value="LOGIN"(click)="login(e.empId,e.empMgrId)"/>
+    </td>
+  </tr>
+  </table>
+     </div>
+</body>
+  <br/>
+  <div id=image></div>
+
+

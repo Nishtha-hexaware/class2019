@@ -1,0 +1,19 @@
+#head{
+    
+    text-align: center;
+}
+.button{
+    font-weight: bold;
+}
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  
+
+}
+body{
+    background-image : url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3unPyxt7Y2gtHWbK4p0iZefIjV0CIt6dhKsc7H0HnDGd-5GV");
+ background-size: cover;
+    background-position: center;
+  
+}
