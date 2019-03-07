@@ -7,11 +7,7 @@
       <th>EndDate</th><th>LeaveType</th><th>Status</th><th>Reason</th><th>AppliedOn</th>
       <th>ManagerComment</th>
     </tr>
-    <tr *ngFor="let e of leavehistory | async | paginate: { id : 'listing_pagination',
-  itemsPerPage:5,
-  currentPage: page,
-  totalItems: totalRec
-  }">
+    <tr *ngFor="let e of leavehistory | async ">
       <td>{{e.leaId}}</td>
       <td>{{e.leaEmpId}}</td>
       <td>{{e.leaNumberOfDays}}</td>
@@ -52,9 +48,5 @@
   <br/>
   <br/>
   <br/>
-  
-<div>
-  <pagination-controls  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
-</div>
 
 </body>

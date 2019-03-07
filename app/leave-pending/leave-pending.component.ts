@@ -44,6 +44,9 @@ export class LeavePendingComponent implements OnInit {
     this._router.navigate(["/ApproveDeny"]);
 
   }
+ 
+
+
   constructor(private leaveDetailsService : LeavePendingService, private empService : EmployeeService,
        private _router : Router) { 
          this.showButton=false;

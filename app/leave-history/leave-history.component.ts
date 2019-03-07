@@ -25,12 +25,10 @@ page: number =1;
 totalRec : number;
 empData : Observable<Employee[]>;
 empno : number;
-  constructor(private leavehistoryService : LeavePendingService,private employeeService : EmployeeService,
+  constructor(private leavehistoryService : LeavePendingService,
     private _router : Router) { 
-    this.empData= employeeService.getEmployee();
     this.empno=parseInt(localStorage.getItem("empId"));
     this.leavehistory = leavehistoryService.searchLeaveHistory(this.empno);
-    this.leavePending.subscribe(result =>{this.totalRec= result.length});
   }
 
   ngOnInit() {
