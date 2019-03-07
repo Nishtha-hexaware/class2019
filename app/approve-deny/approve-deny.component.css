@@ -20,3 +20,9 @@ body {
     text-decoration:underline;
 }
 
+a{
+    color:white;
+}
+button{
+    font-weight: bold;
+}

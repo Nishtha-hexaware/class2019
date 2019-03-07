@@ -14,7 +14,6 @@ export class ApplyLeaveComponent implements OnInit {
 
   constructor(public applyLeaveService:LeavePendingService, public router : Router) {
     this.empId=parseInt(localStorage.getItem("empId"));
-    // alert("Employ ID " +this.empId);
    }
   model=new LeavePending();
   message:string;
@@ -28,17 +27,14 @@ export class ApplyLeaveComponent implements OnInit {
     let diffInHours: number = diffInMs / 1000 / 60 / 60/24;
     this.model.leaNumberOfDays=diffInHours + 1;
     
-   // alert(diffInHours);
-    //console.log(diffInHours);
 
-    //alert("Event Fired");
 }
 
 applyLeave(form: NgForm)
 {
     this.isValidFormSubmitted=false;
     if(form.invalid){
-   //     alert("Invalid");
+
      return; 
   }  
     console.log ('end date component' + this.model.leaEndDate);
@@ -56,12 +52,12 @@ applyLeave(form: NgForm)
     setTimeout(() => {
       this.router.navigate(['/Dashboard'])
     }
-    , 10000);
+    , 3000);
 }
-  cancel(){
-   this.router.navigate(['/Dashboard'])
-  }
 
+cancel(){
+  this.router.navigate(['/Dashboard'])
+ }
   ngOnInit() {
   }
 

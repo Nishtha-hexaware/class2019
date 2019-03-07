@@ -25,7 +25,6 @@ export class ApproveDenyComponent implements OnInit {
     this.leavId=parseInt(localStorage.getItem("leavid"));
     this.lempId=parseInt(localStorage.getItem("empId"));
     this.empDetails=this.empService.searchEmployee(this.lempId);
-    // alert(this.leavId);
     this.leaveDetails=leaveService.searchById(this.leavId);
     this.obj=new LeavePending();
   }
@@ -58,8 +57,6 @@ export class ApproveDenyComponent implements OnInit {
           console.log(errorMsg);
       }
   )
- 
-//  this.isValidFormSubmitted = true;
     
   }
 

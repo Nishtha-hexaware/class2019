@@ -17,7 +17,9 @@ import { FilterdataPipe } from './filterdata.pipe';
 import { SortdataPipe } from './sortdata.pipe';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LeavePendingService } from './leave-pending.service';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { NewComponent } from './new/new.component';
+
 const data:Routes= [
  {path:'',component:NewComponent},
  {path:'EmployeeComponent',component:EmployeeComponent},
@@ -49,7 +51,8 @@ const data:Routes= [
     NewComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,NgxPaginationModule,
+
     HttpModule,FormsModule,RouterModule.forRoot(data)
   ],
   providers: [LeavePendingService],

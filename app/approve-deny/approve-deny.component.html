@@ -1,37 +1,54 @@
 <html>
-<body>
+<link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <body>
+         <br/> 
+          &nbsp;<a href="Dashboard"><i class="fa fa-chevron-circle-left" style="font-size:36px"></i></a>
 
 <div class=center>
 
 <fieldset>
   <legend class=style>APPROVE/DENY</legend><br/>
 
-Manager ID:
-{{ (empDetails | async)?.empId}} <br/><br/>
-Full Name : 
+Manager ID 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;
+{{ (empDetails | async)?.empId}} <br/>
+<br/>
+Name 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;
 {{ (empDetails | async)?.empFullName}} <br/><br/>
-Leave Balance : 
+
+Leave Balance 
+&nbsp;&nbsp;&nbsp;: &nbsp; 
 {{ (empDetails | async)?.empAvailLeavBal}} <br/><br/>
-Start Date : 
+Start Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;
 {{ (leaveDetails | async)?.leaStartDate}} <br/><br/>
-End Date : 
+End Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; 
 {{ (leaveDetails | async)?.leaEndDate}} <br/><br/>
-No of Days: 
+No of Days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;
 {{ (leaveDetails | async)?.leaNumberOfDays}} <br/><br/>
-Leave Type : 
+Leave Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;
 {{ (leaveDetails | async)?.leaLeaveType}} <br/><br/>
-Reason : 
+Reason &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;  
 {{ (leaveDetails | async)?.leaReason}}<br/><br/>
-<div class= "form-group">
-  Comments:  <input type="text" [(ngModel)]="obj.leaManagerComment"  name="" class="input" style="margin-left:37px;">
+
+<div class= "form-group" >
+ 
+  Comments &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;  
+  <input type="text" [(ngModel)]="obj.leaManagerComment"  required="required" name="" class="input" >
+
 </div>
 </fieldset>
 <br/>
+
 <div align="center">
-<button  (click)="approve()"  class="btn btn-success">Approve</button> &nbsp;&nbsp;
-<button  (click)="deny()" class="btn btn-danger" >Deny</button> &nbsp;&nbsp;
-<button  (click)="cancel()" class="btn btn-primary" >Cancel</button> 
+<button  (click)="approve()"  class="btn btn-success">APPROVE</button> &nbsp;&nbsp;
+<button  (click)="deny()" class="btn btn-danger" >DENY</button> &nbsp;&nbsp;
+<button  (click)="cancel()" class="btn btn-primary" >CANCEL</button> 
 </div>
+
 <br/>
 <fieldset><legend>RESULT</legend> <div align="center"> {{msg}} </div></fieldset>
 

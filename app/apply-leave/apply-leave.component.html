@@ -1,6 +1,9 @@
+<link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <body>
-          
+         <br/> 
+          &nbsp;<a href="Dashboard"><i class="fa fa-chevron-circle-left" style="font-size:36px"></i></a>
 <div class="center">
 
   <form #userForm="ngForm" (ngSubmit)="applyLeave(userForm)">
@@ -9,14 +12,16 @@
     
       <div class="form-group">
              
-          <label for= "leaStartDate"><b><font size="4">Start Date :</font></b></label> &nbsp;&nbsp;
+          <label for= "leaStartDate"><b><font size="4">Start Date   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  &nbsp;&nbsp;&nbsp; : &nbsp;</font></b></label> &nbsp;&nbsp;
           <input type="Date" required="required" [(ngModel)]="model.leaStartDate" name="leaStartDate" #leaStartDate="ngModel"  >
           <div *ngIf="leaStartDate.invalid && userForm.submitted && !isValidFormSubmitted"  [ngClass] = "'error'"> 
                 <h6>Start Date is Required.</h6>
                </div>
       </div><br/>
       <div class= "form-group">
-              <label for= "leaEndDate"><b><font size="4">End Date :</font></b> </label> &nbsp;&nbsp;
+              <label for= "leaEndDate"><b><font size="4">End Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;</font></b> </label> &nbsp;&nbsp;
               <input type = "Date" class= "form-control"
               id = "leaEndDate" required="required"
               [(ngModel)]= "model.leaEndDate" name="leaEndDate" #leaEndDate="ngModel" (change)="calculateDays()">
@@ -26,7 +31,8 @@
           </div>
           <br/>
           <div class="form-group">
-                  <label for="leaLeaveType"><b><font size="4">Leave Type :</font></b></label> &nbsp;&nbsp;
+                  <label for="leaLeaveType"><b><font size="4">Leave Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  &nbsp; : &nbsp;</font></b></label> &nbsp;&nbsp;
                   <select [(ngModel)]="model.leaLeaveType" name="leaLeaveType" required="required" #leaLeaveType="ngModel">
                       <option value="EL">EL</option>
                       <option value="SL">SL</option>
@@ -34,7 +40,8 @@
                   </select>
           </div><br/>
           <div class= "form-group">
-                  <label for= "leaNumberOfDays"><b><font size="4">Number of Days :</font></b> </label> &nbsp;&nbsp;
+                  <label for= "leaNumberOfDays"><b><font size="4">Number of Days &nbsp;&nbsp;
+                          &nbsp;:&nbsp;</font></b> </label> &nbsp;&nbsp;
                   <input type = "number" class= "form-control" readonly
                   id = "leaNumberOfDays" required="required"
                   [(ngModel)]= "model.leaNumberOfDays" name="leaNumberOfDays" #leaNumberOfDays="ngModel" >
@@ -43,8 +50,9 @@
                          </div>
               </div><br/>
           <div class= "form-group">
-                  <label for= "leaReason"><b><font size="4">Leave Reason :</font></b></label> &nbsp;&nbsp;
-                  <input type = "string" class= "form-control" size="30"
+                  <label for= "leaReason"><b><font size="4">Leave Reason &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                          : &nbsp;</font></b></label> &nbsp;&nbsp;
+                  <input type = "string" class= "form-control" size="20"
                   id = "leaReason" required="required"
                   [(ngModel)]= "model.leaReason" name="leaReason" #leaReason="ngModel">
                   <div *ngIf="leaReason.invalid && userForm.submitted && !isValidFormSubmitted"  [ngClass] = "'error'"> 

@@ -1,73 +1,113 @@
-<body>
-    
-    <br/>
-<h1 id=head> LEAVE DETAILS </h1>
 
-<table border="3" >
-   <tr *ngFor="let e of empData | async"> 
+<link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body>
+  <br/>
+ &nbsp;<a href="Dashboard"><i class="fa fa-chevron-circle-left" style="font-size:36px"></i></a>
+    
+      <br/>
+  <h1 id=head> LEAVE DETAILS </h1>
+
+<table border="3">
+   <div *ngFor="let e of empData | async | orderBy: sempno:rev"> 
       <div *ngIf="e.empMgrId==empno"> 
           <th>Employee Id</th> <td>{{e.empId}}</td>
           <th>Employee Name</th> <td>{{e.empFullName}}</td>
           <th>Leave Balance</th> <td>{{e.empAvailLeavBal}}</td>
           <!-- <br/><br/> -->
-          <tr border="3" width =100%>
-              <th width="100">Leave ID</th>
-              <th width="94">Employee ID</th>
-              <th width="150">Start Date</th>
-              <th width="150">End Date</th>
-              <th width="140">Number Of Leaves</th>
-              <th width="152">Leave Reason</th>
-              <th width="150">Applied On</th>
-              <th width="180">Manager Comments</th>
-              </tr>              
+          <tr border="3">
+              <th width="70">Leave ID</th>
+              <th>Employee ID</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Number Of Leaves</th>
+              <th>Leave Reason</th>
+              <th>Applied On</th>
+              <th>Manager Comments</th>
+              </tr>
         </div>
-
-        <table border="3">
-            <tr border="3">
-                <tr *ngFor="let ld of leavedetails | async" (click)="setClickRowDup(ld.leaId, e.empId)">
-            <div *ngIf="e.empId == ld.leaEmpId" rowspan=250 px>
-            <td width="100">{{ld.leaId}}</td>
-            <td width="93">{{ld.leaEmpId}}</td>
-            <td width="150">{{ld.leaStartDate}}</td>
+        <table border ="3">
+            <div *ngFor="let ld of leavedetails | async | orderBy: order:reverse" (click)="setClickRowDup(ld.leaId, e.empId)">
+            <div *ngIf="e.empId == ld.leaEmpId" rowspan=200 px>
+               <div *ngIf="tat(ld.leaStartDate)==1">
+                  <tr bgcolor  = "red">
+               <td width="70"><input type="checkbox" (change)="checkbox(ld.leaId,e.empId)" [checked]="demo"></td>
+            <td width="70">{{ld.leaId}}</td>
+            <td width="90">{{ld.leaEmpId}}</td>
+            <td width="110">{{ld.leaStartDate}}</td>
             <td width="150">{{ld.leaEndDate}}</td>
-            <td width="140">{{ld.leaNumberOfDays}}</td>
-            <td width="153">{{ld.leaReason}}</td>
-            <td width="150">{{ld.leaAppliedOn}}</td>
-            <td width="180">{{ld.leaManagerComment}}</td>
+            <td width="135">{{ld.leaNumberOfDays}}</td>
+            <td width="100">{{ld.leaReason}}</td>
+            <td width="80">{{ld.leaAppliedOn}}</td>
+            <td width="140">{{ld.leaManagerComment}}</td>
+         </tr>
+         </div>
+               <div *ngIf="tat(ld.leaStartDate) > 1">
+                  <tr>
+                     <td width="70"><input type="checkbox" (change)="checkbox(ld.leaId,e.empId)" [checked]="demo"></td>
+                     <td width="70">{{ld.leaId}}</td>
+                     <td width="90">{{ld.leaEmpId}}</td>
+                     <td width="110">{{ld.leaStartDate}}</td>
+                     <td width="150">{{ld.leaEndDate}}</td>
+                     <td width="135">{{ld.leaNumberOfDays}}</td>
+                     <td width="100">{{ld.leaReason}}</td>
+                     <td width="80">{{ld.leaAppliedOn}}</td>
+                     <td width="140">{{ld.leaManagerComment}}</td>
+                  </tr>
+               </div>
             </div>
-            </tr>
+         </div>
             </table>
-            
-   </tr>
+            <br/>
+   </div>
 </table>
 <br/>
 <div align = center>
-<div *ngIf="showButton">
-    <input type="button"class="button" (click)="doApproveDeny()" value="APPROVE/DENY">
-    </div>
-</div>
-<div align = center>
-       <div *ngIf="!showButton">
-       <input type="button" class="button" align="center" value="APPROVE/DENY"  disabled="disabled">
-       </div>
-    </div>
-    <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+      <div *ngIf="showButton">
+          <input type="button"class="button" (click)="doApproveDeny()" value="APPROVE/DENY">
+          </div>
+      </div>
+      <div align = center>
+             <div *ngIf="!showButton">
+             <input type="button" class="button" align="center" value="APPROVE/DENY"  disabled="disabled">
+             </div>
+          </div>
+      <br/>
 
-</body>
+
+
+
+          <div align = center>
+               <div *ngIf="showButton">
+          <input type="button"  class="button"  value="APPROVE ALL" (click)="approveAll()" />
+       </div>
+        </div>
+    <div align = center>
+             <div *ngIf="!showButton">
+             <input type="button" class="button" align="center" value="APPROVE ALL"  disabled="disabled">
+             </div>
+          </div>
+       <br/> <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+ 
+  </body>
+
 

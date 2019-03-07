@@ -15,3 +15,8 @@ body{
     background-size: cover;
     background-position: center;
 }
+a{
+    color:black;
+}
+
+tr:hover {background-color : lightslategrey;}

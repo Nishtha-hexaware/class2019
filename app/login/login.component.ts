@@ -14,12 +14,10 @@ export class LoginComponent implements OnInit {
     }
   
   Login() {
+    if(this.password=="1234"){
     this._router.navigate(["/Dashboard"]);
-    // if (this.username=='Nishtha' && this.password=="Nish123"){
-    //   this._router.navigate(["/dashboard"])
-    // }else{
-    //   alert("Invalid Credentials")
-    // }
+    }
+
   }
     ngOnInit() {
     }
