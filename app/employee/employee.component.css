@@ -5,7 +5,9 @@
      border-bottom: 5px solid lightslategray;
 
 }
-tr:hover {background-color : lightslategrey;}
+tr:hover {background-color : lightslategrey;
+}
+
 
 #image {
   background-image: url("https://hexaware.com/wp-content/themes/hexaware-main/images/brandman.jpg");
