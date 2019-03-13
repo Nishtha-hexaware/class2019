@@ -1,0 +1,60 @@
+<html>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  
+
+
+  <body>
+     <div class="w3-container">
+
+<div class="center" align="center">
+
+ <div class="border" align="center">
+   <legend class=style> SIGN-IN</legend>
+   <br/>
+ <div style="text-align:center" > 
+
+ 
+<div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+ 
+    <div class="modal-content">
+     <div class="modal-header" *ngIf="username==1000">
+      <img class="w3-animate-fading" src="https://raw.githubusercontent.com/Nishtha-hexaware/class2019/master/Sanju.jpg?_sm_au_=iVVnHJ0nNSM0SBKH" >
+      </div>
+      <div class="modal-header" *ngIf="username==2000">
+      <img class="w3-animate-fading" src="https://raw.githubusercontent.com/Nishtha-hexaware/class2019/master/BHASKAR.jpg?_sm_au_=iVVZ2ssQf6ZrfSDN">
+      </div>
+      <div class="modal-header" *ngIf="username==3000">
+      <img class="w3-animate-fading" src="https://raw.githubusercontent.com/Nishtha-hexaware/class2019/master/PAVAN.jpg?_sm_au_=iVVZ2ssQf6ZrfSDN">
+      </div>
+      <div class="modal-header" *ngIf="username==4000">
+      <img class="w3-animate-fading" src="https://raw.githubusercontent.com/Nishtha-hexaware/class2019/master/NISHTHA.jpg?_sm_au_=iVVZ2ssQf6ZrfSDN">
+      </div>
+      <div class="modal-header" *ngIf="username==5000">
+      <img class="w3-animate-fading" src="https://raw.githubusercontent.com/Nishtha-hexaware/class2019/master/Karthiga.jpg?_sm_au_=iVV7PHRWm25FLHp6" >
+      </div> 
+    </div>
+    </div> 
+  </div> 
+</div>
+ <br/>
+
+
+<form ngNativeValidate (ngSubmit)="Login()" align="center">
+
+          <b>EMPLOYEE ID 👨</b><br/>
+  <input type = "text" name="username" [(ngModel)]="username" readonly/> <br/> <br/>
+
+          <b>PASSWORD 🔓</b><br/>
+  <input type = "password" name="password" [(ngModel)]="password" required="required"/><br/> <br/>
+
+    <input type="submit" class ="button" value="LOGIN">
+
+</form>
+ </div>
+</div>
+</div>
+</body>
+</html>

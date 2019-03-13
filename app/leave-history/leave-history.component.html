@@ -1,0 +1,61 @@
+
+<link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body>
+  <br/>
+ &nbsp;<a href="Dashboard"><i class="fa fa-chevron-circle-left" style="font-size:36px"></i></a>
+
+    <br/><h1 id=head> LEAVE HISTORY </h1>
+  
+    <table border="7" width=100%>
+    <tr>
+      <th>Leave Id</th><th>EmpId</th><th>NumberOfDays</th><th>StartDate</th>
+      <th>EndDate</th><th>LeaveType</th><th>Status</th><th>Reason</th><th>AppliedOn</th>
+      <th>ManagerComment</th>
+    </tr>
+        <tr *ngFor="let e of leavehistory | async | paginate: { id:'listing_pagination',
+    itemsPerPage: 5,
+    currentPage: page,
+    totalItems: totalRec}" >
+    <!-- <tr *ngFor="let e of leavehistory | async | paginate: { id:'listing_pagination',
+    itemsPerPage: 5,
+    totalItems: totalRec}" > -->
+      <td>{{e.leaId}}</td>
+      <td>{{e.leaEmpId}}</td>
+      <td>{{e.leaNumberOfDays}}</td>
+      <td>{{e.leaStartDate}}</td>
+      <td>{{e.leaEndDate}}</td>
+      <td>{{e.leaLeaveType}}</td>
+      <td>{{e.leaStatus}}</td>
+      <td>{{e.leaReason}}</td>
+      <td>{{e.leaAppliedOn}}</td>
+      <td>{{e.leaManagerComment}}</td>
+    </tr>
+    </table> 
+    <b><pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls></b>
+    <div align = center>
+        <input type="button" class = "button" value="APPLY LEAVE" (click)="applyLeave()" />
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+   
+    <br/>
+    <br/>
+    <br/>
+      <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+  </body>
